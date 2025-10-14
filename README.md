@@ -19,10 +19,18 @@ This program needs an x86_64 processor. Any Intel or AMD processor may be used f
 
 #### Compiling the Source
 
-The source code is compiled using Microsoft Visual Studio. The program depends on Qt 5.12.3, OpenCV 4.1 and [cvutil](https://github.com/rootphenomicslab/cvutil) 2.0.3 libraries for compiling the source.
+The source code is compiled using Microsoft Visual Studio. The program depends on Qt 6.9, OpenCV 4.11 or above and [cvutil](https://github.com/rootphenomicslab/cvutil) 2.5.0 libraries for compiling the source.
+
+#### Example Usage from Command Line
+
+RhizoVision Explorer supports command line interface (CLI) for batch processing and automation. The CLI provides extensive configuration options for root analysis, region of interest specification, and output customization. You can process single images or entire directories with various analysis parameters.
+
+For detailed CLI usage examples and comprehensive command reference, see [Example Usage](example_usage.md).
+
 
 #### Copyright and License
 
+Copyright (C) 2025, Oak Ridge National Laboratory  
 Copyright (C) 2021, Anand Seethepalli and Larry York  
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
@@ -44,8 +52,8 @@ Please use the following citation when using the software.
 Please send any comments/suggestions/improvements for the program to the authors:
 
 Anand Seethepalli  
-anand.seethepalli@yahoo.co.in
+seethepallia@ornl.gov
 
 Larry York  
-larry.york@gmail.com
+yorklm@ornl.gov
 

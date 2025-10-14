@@ -1,12 +1,13 @@
 /*
+Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
 File: rootsegmentprop.h
 
 Authors:
-Anand Seethepalli (anand.seethepalli@yahoo.co.in)
-Larry York (larry.york@gmail.com)
+Anand Seethepalli (seethepallia@ornl.gov)
+Larry York (yorklm@ornl.gov)
 
 This file is part of RhizoVision Explorer.
 
@@ -33,6 +34,7 @@ If not, see <https://www.gnu.org/licenses/>.
 #include "common_types.h"
 
 void getrootlength(cv::Mat skeleton, ListofListsRef<cv::Point> segments, PointList overlap, double &rootlen);
+void getrootlength_new(cv::Mat skeleton, ListofListsRef<cv::Point> segments, PointList overlap, PointList simplified, double& rootlen);
 //double getrootlength(cv::Mat skeleton);
 
 void getrootradii(cv::Mat skeleton, cv::Mat segment, cv::Mat dist, ListofListsRef<cv::Point> segments, ListofListsRef<double> radii, double& maxradius, int& maxradrowidx);

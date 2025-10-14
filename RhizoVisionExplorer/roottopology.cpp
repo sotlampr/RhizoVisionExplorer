@@ -1,12 +1,13 @@
 /*
+Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
 File: roottopology.cpp
 
 Authors:
-Anand Seethepalli (anand.seethepalli@yahoo.co.in)
-Larry York (larry.york@gmail.com)
+Anand Seethepalli (seethepallia@ornl.gov)
+Larry York (yorklm@ornl.gov)
 
 This file is part of RhizoVision Explorer.
 
@@ -1411,7 +1412,7 @@ cv::Mat drawtopology_wholeroot(cv::Mat img, cv::Scalar_<int> ranges, std::vector
     return result;
 }
 
-Mat drawtopology_disconnectedroot(Mat segmented, cv::Mat dist, Scalar_<int> ranges, Mat _skeleton, PointList branchpts, PointList endpts, PointList overlappts, int width)
+Mat drawtopology_disconnectedroot(Mat segmented, cv::Mat dist, Scalar_<int> ranges, Mat _skeleton, PointList branchpts, PointList endpts, PointList overlappts, PointList simplified, int width)
 {
     Mat skeleton;
     Mat se = getStructuringElement(MORPH_RECT, Size(width, width));
@@ -1454,6 +1455,8 @@ Mat drawtopology_disconnectedroot(Mat segmented, cv::Mat dist, Scalar_<int> rang
         for (auto& pt : contours[i])
             circle(colorimage, Point(pt.x - 1, pt.y - 1), 0, Scalar(0, 127, 255), -1, LineTypes::LINE_8);
     }*/
+    for (auto& pt : simplified)
+        circle(colorimage, Point(pt.x + ranges[3], pt.y + ranges[1]), 0, Scalar(40, 157, 247), width, LineTypes::LINE_8);
     for (auto& pt : branchpts)
         circle(colorimage, Point(pt.x + ranges[3], pt.y + ranges[1]), 0, Scalar(184, 126, 55), width, LineTypes::LINE_8);
     for (auto& pt : endpts)

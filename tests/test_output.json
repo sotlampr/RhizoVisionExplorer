@@ -1,0 +1,1667 @@
+{
+  "summary": {
+    "total_tests": 78,
+    "passed": 78,
+    "failed": 0,
+    "success_rate": 100.0
+  },
+  "failed_tests": [],
+  "equivalence_issues": [],
+  "detailed_results": [
+    {
+      "name": "help_short",
+      "success": true,
+      "args": [
+        "-h"
+      ],
+      "returncode": 0,
+      "validation": {
+        "help": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "help_long",
+      "success": true,
+      "args": [
+        "--help"
+      ],
+      "returncode": 0,
+      "validation": {
+        "help": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "version",
+      "success": true,
+      "args": [
+        "--version"
+      ],
+      "returncode": 0,
+      "validation": {
+        "version": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "license",
+      "success": true,
+      "args": [
+        "--license"
+      ],
+      "returncode": 0,
+      "validation": {
+        "license": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "credits",
+      "success": true,
+      "args": [
+        "--credits"
+      ],
+      "returncode": 0,
+      "validation": {
+        "credits": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "basic_single_crown",
+      "success": true,
+      "args": [
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 2,
+        "errors": []
+      }
+    },
+    {
+      "name": "basic_single_scan",
+      "success": true,
+      "args": [
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "basic_crowns_directory",
+      "success": true,
+      "args": [
+        "test_images/crowns/"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "basic_scans_directory",
+      "success": true,
+      "args": [
+        "test_images/scans/"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "recursive_short",
+      "success": true,
+      "args": [
+        "-r",
+        "test_images/"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "recursive_long",
+      "success": true,
+      "args": [
+        "--recursive",
+        "test_images/"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "output_file_short",
+      "success": true,
+      "args": [
+        "-o",
+        "custom.csv",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 2,
+        "errors": []
+      }
+    },
+    {
+      "name": "output_file_long",
+      "success": true,
+      "args": [
+        "--output",
+        "custom.csv",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "output_path_short",
+      "success": true,
+      "args": [
+        "-op",
+        "output_dir",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "output_path_long",
+      "success": true,
+      "args": [
+        "--output_path",
+        "output_dir",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "noappend_short",
+      "success": true,
+      "args": [
+        "-na",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "noappend_long",
+      "success": true,
+      "args": [
+        "--noappend",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_0_thresh_100_short",
+      "success": true,
+      "args": [
+        "-rt",
+        "0",
+        "-t",
+        "100",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_0_thresh_100_long",
+      "success": true,
+      "args": [
+        "--roottype",
+        "0",
+        "--threshold",
+        "100",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_0_thresh_150_short",
+      "success": true,
+      "args": [
+        "-rt",
+        "0",
+        "-t",
+        "150",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_0_thresh_150_long",
+      "success": true,
+      "args": [
+        "--roottype",
+        "0",
+        "--threshold",
+        "150",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_0_thresh_200_short",
+      "success": true,
+      "args": [
+        "-rt",
+        "0",
+        "-t",
+        "200",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_0_thresh_200_long",
+      "success": true,
+      "args": [
+        "--roottype",
+        "0",
+        "--threshold",
+        "200",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_1_thresh_100_short",
+      "success": true,
+      "args": [
+        "-rt",
+        "1",
+        "-t",
+        "100",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_1_thresh_100_long",
+      "success": true,
+      "args": [
+        "--roottype",
+        "1",
+        "--threshold",
+        "100",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_1_thresh_150_short",
+      "success": true,
+      "args": [
+        "-rt",
+        "1",
+        "-t",
+        "150",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_1_thresh_150_long",
+      "success": true,
+      "args": [
+        "--roottype",
+        "1",
+        "--threshold",
+        "150",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_1_thresh_200_short",
+      "success": true,
+      "args": [
+        "-rt",
+        "1",
+        "-t",
+        "200",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "roottype_1_thresh_200_long",
+      "success": true,
+      "args": [
+        "--roottype",
+        "1",
+        "--threshold",
+        "200",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "keeplargest_short",
+      "success": true,
+      "args": [
+        "-kl",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "keeplargest_long",
+      "success": true,
+      "args": [
+        "--keeplargest",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "bgnoise",
+      "success": true,
+      "args": [
+        "--bgnoise",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "fgnoise",
+      "success": true,
+      "args": [
+        "--fgnoise",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "bg_fg_noise",
+      "success": true,
+      "args": [
+        "--bgnoise",
+        "--bgsize",
+        "0.5",
+        "--fgnoise",
+        "--fgsize",
+        "2.0",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "smooth_short",
+      "success": true,
+      "args": [
+        "-s",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "smooth_long",
+      "success": true,
+      "args": [
+        "--smooth",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "smooth_threshold_short",
+      "success": true,
+      "args": [
+        "-s",
+        "-st",
+        "3.0",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "smooth_threshold_long",
+      "success": true,
+      "args": [
+        "--smooth",
+        "--smooththreshold",
+        "1.5",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "convert_dpi",
+      "success": true,
+      "args": [
+        "--convert",
+        "--factordpi",
+        "300",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "convert_pixels",
+      "success": true,
+      "args": [
+        "--convert",
+        "--factorpixels",
+        "10",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "convert_both_precedence",
+      "success": true,
+      "args": [
+        "--convert",
+        "--factordpi",
+        "150",
+        "--factorpixels",
+        "5",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "prune",
+      "success": true,
+      "args": [
+        "--prune",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "prune_threshold_short",
+      "success": true,
+      "args": [
+        "--prune",
+        "-pt",
+        "5",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "prune_threshold_long",
+      "success": true,
+      "args": [
+        "--prune",
+        "--prunethreshold",
+        "10",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "dranges_10_30_50",
+      "success": true,
+      "args": [
+        "--dranges",
+        "1.0,3.0,5.0",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "dranges_10_20_30",
+      "success": true,
+      "args": [
+        "--dranges",
+        "1.0, 2.0, 3.0",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "dranges_20_40_60_80",
+      "success": true,
+      "args": [
+        "--dranges",
+        "2.0 ,4.0 ,6.0 ,8.0",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "dranges_20_40_60_80",
+      "success": true,
+      "args": [
+        "--dranges",
+        "2.0 ,4.0 , 6.0, 8.0",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "segment",
+      "success": true,
+      "args": [
+        "--segment",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "feature",
+      "success": true,
+      "args": [
+        "--feature",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "segment_feature",
+      "success": true,
+      "args": [
+        "--segment",
+        "--feature",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "custom_suffixes",
+      "success": true,
+      "args": [
+        "--segment",
+        "--ssuffix",
+        "_segmented",
+        "--feature",
+        "--fsuffix",
+        "_processed",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "convexhull_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-ch",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "convexhull_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--convexhull",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "holes_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-ho",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "holes_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--holes",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "distancemap_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-dm",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "distancemap_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--distancemap",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "medialaxis_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-ma",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "medialaxis_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--medialaxis",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "medialaxis_width_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-ma",
+        "-mw",
+        "5",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "medialaxis_width_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--medialaxis",
+        "--medialaxiswidth",
+        "2",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "topology_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-to",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "topology_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--topology",
+        "test_scan.jpg"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "contours_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-co",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "contours_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--contours",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "contour_width_short",
+      "success": true,
+      "args": [
+        "--feature",
+        "-co",
+        "-cw",
+        "2",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "contour_width_long",
+      "success": true,
+      "args": [
+        "--feature",
+        "--contours",
+        "--contourwidth",
+        "3",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "complex_whole_root",
+      "success": true,
+      "args": [
+        "-rt",
+        "0",
+        "-t",
+        "180",
+        "--convert",
+        "--factordpi",
+        "300",
+        "--smooth",
+        "-st",
+        "2.5",
+        "--feature",
+        "-ch",
+        "-ho",
+        "-ma",
+        "-co",
+        "--dranges",
+        "1.0,2.5,5.0",
+        "-o",
+        "whole_roots.csv",
+        "-op",
+        "output_dir",
+        "test_crown.png"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "complex_broken_root",
+      "success": true,
+      "args": [
+        "-rt",
+        "1",
+        "--threshold",
+        "150",
+        "--invert",
+        "--bgnoise",
+        "--bgsize",
+        "1.5",
+        "--fgnoise",
+        "--fgsize",
+        "0.8",
+        "--prune",
+        "-pt",
+        "3",
+        "--segment",
+        "--feature",
+        "-ma",
+        "-dm",
+        "-o",
+        "broken_analysis.csv",
+        "test_images/scans/"
+      ],
+      "returncode": 0,
+      "validation": {
+        "process_success": true
+      },
+      "csv_validation": {
+        "exists": true,
+        "readable": true,
+        "has_header": true,
+        "has_data": true,
+        "column_count": 26,
+        "row_count": 3,
+        "errors": []
+      }
+    },
+    {
+      "name": "no_input",
+      "success": true,
+      "args": [],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "missing_threshold_value",
+      "success": true,
+      "args": [
+        "--threshold"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "missing_output_value",
+      "success": true,
+      "args": [
+        "--output"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "missing_dranges_value",
+      "success": true,
+      "args": [
+        "--dranges"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "unknown_option",
+      "success": true,
+      "args": [
+        "--unknown-option",
+        "test_crown.png"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "multiple_inputs",
+      "success": true,
+      "args": [
+        "test_crown.png",
+        "test_scan.jpg"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "invalid_roottype",
+      "success": true,
+      "args": [
+        "-rt",
+        "2",
+        "test_crown.png"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    },
+    {
+      "name": "invalid_threshold",
+      "success": true,
+      "args": [
+        "-t",
+        "300",
+        "test_scan.jpg"
+      ],
+      "returncode": 1,
+      "validation": {
+        "error_expected": true
+      },
+      "csv_validation": null
+    }
+  ]
+}

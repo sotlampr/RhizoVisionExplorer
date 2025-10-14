@@ -1,12 +1,13 @@
 /*
+Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
 File: MainUI.cpp
 
 Authors:
-Anand Seethepalli (anand.seethepalli@yahoo.co.in)
-Larry York (larry.york@gmail.com)
+Anand Seethepalli (seethepallia@ornl.gov)
+Larry York (yorklm@ornl.gov)
 
 This file is part of RhizoVision Explorer.
 
@@ -73,7 +74,7 @@ CheckEnabler::CheckEnabler(QString text, QString lbltext, bool integervalue, QWi
     vlayout->addLayout(layout);
     vlayout->setContentsMargins(0, 0, 0, 0);
 
-    connect(cb, &QCheckBox::stateChanged, [&]() 
+    connect(cb, &QCheckBox::checkStateChanged, [&]() 
     {
         if (cb->checkState() == Qt::CheckState::Checked)
         {
@@ -125,7 +126,7 @@ StringCheckEnabler::StringCheckEnabler(QString text, QString lbltext, QWidget *p
     vlayout->addLayout(layout);
     vlayout->setContentsMargins(0, 0, 0, 0);
 
-    connect(cb, &QCheckBox::stateChanged, [&]()
+    connect(cb, &QCheckBox::checkStateChanged, [&]()
     {
         if (cb->checkState() == Qt::CheckState::Checked)
         {
@@ -357,7 +358,7 @@ void MainUI::connectSignalstoSlots()
         }
     });
 
-    connect(keepLargest, &QCheckBox::stateChanged, [&]()
+    connect(keepLargest, &QCheckBox::checkStateChanged, [&]()
     {
         int idx = roottype->currentIndex();
         config->keepLargest = keepLargest->isChecked();
@@ -394,22 +395,22 @@ void MainUI::connectSignalstoSlots()
         }
     });
 
-    connect(showConvexHull, &QCheckBox::stateChanged, [&](int k)
+    connect(showConvexHull, &QCheckBox::checkStateChanged, [&](int k)
     {
         config->showConvexHull = showConvexHull->isChecked();
     });
 
-    connect(showHoles, &QCheckBox::stateChanged, [&](int k)
+    connect(showHoles, &QCheckBox::checkStateChanged, [&](int k)
     {
         config->showHoles = showHoles->isChecked();
     });
 
-    connect(showDistMap, &QCheckBox::stateChanged, [&](int k)
+    connect(showDistMap, &QCheckBox::checkStateChanged, [&](int k)
     {
         config->showDistMap = showDistMap->isChecked();
     });
 
-    connect(showMedialAxisDiameter, &QCheckBox::stateChanged, [&](int k)
+    connect(showMedialAxisDiameter, &QCheckBox::checkStateChanged, [&](int k)
     {
         config->showMedialAxisDiameter = showMedialAxisDiameter->isChecked();
     });
@@ -690,7 +691,7 @@ void MainUI::createOptions()
     //pc->addLayout(mainvl);
 
     QPixmap arr = pluginui->style()->standardPixmap(QStyle::StandardPixmap::SP_TitleBarShadeButton);
-    QMatrix rm;
+    QTransform rm;
     rm.rotate(90);
     rightarrow = QIcon(arr.transformed(rm));
     rm.rotate(-135);
@@ -1267,17 +1268,17 @@ QWidget *MainUI::getPluginUI()
         saveseg->setChecked(config->savesegmented);
         savepro->setChecked(config->saveprocessed);
 
-        QRegExp re("^(?!(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\\.[^.]*)?$)[^<>:\"/\\\\|?*\\x00-\\x1F]*[^<>:\"/\\\\|?*\\x00-\\x1F\\ .]$");
+        QRegularExpression re("^(?!(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(?:\\.[^.]*)?$)[^<>:\"/\\\\|?*\\x00-\\x1F]*[^<>:\"/\\\\|?*\\x00-\\x1F\\ .]$");
         QLabel *flbl = new QLabel("Features output file :");
         featurefileedt = new QLineEdit();
-        featurefileedt->setValidator(new QRegExpValidator(re));
+        featurefileedt->setValidator(new QRegularExpressionValidator(re));
         featurefileedt->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
         featurefileedt->setMinimumWidth(40);
         featurefileedt->setText(config->featurecsvfile);
 
         QLabel *mlbl = new QLabel("Metadata file :");
         metadatafileedt = new QLineEdit();
-        metadatafileedt->setValidator(new QRegExpValidator(re));
+        metadatafileedt->setValidator(new QRegularExpressionValidator(re));
         metadatafileedt->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
         metadatafileedt->setMinimumWidth(40);
         metadatafileedt->setText(config->metadatacsvfile);
@@ -1387,7 +1388,7 @@ void MainUI::colorizechart(QChart *chart, int size)
 
     for (int i = 0; i < size; i++)
     {
-        auto s = qobject_cast<QtCharts::QAbstractBarSeries *>(series[0])->barSets()[i];
+        auto s = qobject_cast<QAbstractBarSeries *>(series[0])->barSets()[i];
         s->setColor(QColor(colorranges[i % colorranges.size()][0], colorranges[i % colorranges.size()][1], colorranges[i % colorranges.size()][2]));
     }
 }
@@ -1705,7 +1706,7 @@ int MainUI::saveOutput(QString savloc, QString inputfilename)
                     f << "," << "NA";
             }
 
-            f << endl;
+            f << Qt::endl;
         }
         else
         {
@@ -1726,7 +1727,7 @@ int MainUI::saveOutput(QString savloc, QString inputfilename)
                         f << "," << "NA";
                 }
 
-                f << endl;
+                f << Qt::endl;
             }
         }
     }

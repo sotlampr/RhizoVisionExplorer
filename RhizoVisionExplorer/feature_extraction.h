@@ -3,7 +3,7 @@ Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
-File: common_types.h
+File: feature_extraction.h
 
 Authors:
 Anand Seethepalli (seethepallia@ornl.gov)
@@ -28,37 +28,25 @@ If not, see <https://www.gnu.org/licenses/>.
 
 #pragma once
 
-#ifndef COMMON_TYPES_H
-#define COMMON_TYPES_H
+#ifndef FEATURES_H
+#define FEATURES_H
+
+#include <opencv2/opencv.hpp>
+#include <vector>
+#include <thread>
 
 #include <cvutil.h>
 
-using namespace cvutil;
+#include "common_types.h"
+#include "roottopology.h"
+#include "rootsegmentprop.h"
 
-template<typename T>
-using ListRef = std::vector<T>&;
+//using namespace cv;
+using namespace std;
 
-typedef ListRef<int> IndexList;
-typedef std::vector<int> Indices;
-typedef ListRef<double> ValueList;
-typedef std::vector<double> Values;
+#include "MainUI.h"
 
-typedef ListRef<cv::Point> PointList;
-typedef std::vector<cv::Point> Points;
+void feature_extractor(feature_config *config);
 
-template<typename T>
-using ListofListsRef = std::vector<std::vector<T>>&;
+#endif // FEATURES_H
 
-template<typename T>
-using ListofLists = std::vector<std::vector<T>>;
-
-template<typename T>
-using ListofListsPtr = std::vector<std::vector<T>>*;
-
-template<typename TKey, typename TVal>
-using Dictionary = std::unordered_map<TKey, TVal>;
-
-template<typename TKey, typename TVal>
-using DictionaryRef = std::unordered_map<TKey, TVal>&;
-
-#endif

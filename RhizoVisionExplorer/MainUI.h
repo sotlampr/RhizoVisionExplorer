@@ -1,12 +1,13 @@
 /*
+Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
 File: MainUI.h
 
 Authors:
-Anand Seethepalli (anand.seethepalli@yahoo.co.in)
-Larry York (larry.york@gmail.com)
+Anand Seethepalli (seethepallia@ornl.gov)
+Larry York (yorklm@ornl.gov)
 
 This file is part of RhizoVision Explorer.
 
@@ -24,6 +25,9 @@ You should have received a copy of the GNU General Public
 License along with RhizoVision Explorer; see the file COPYING.
 If not, see <https://www.gnu.org/licenses/>.
 */
+
+// Generate MOC code using the following command
+// moc --include C:\Path\to\PluginInterfaces.h MainUI.h -o moc_MainUI.cpp
 
 #pragma once
 
@@ -43,8 +47,6 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <RoiManager.h>
 
 //#include "FeatureExtractorThread.h"
-
-#define RHIZOVISION_EXPLORER_VERSION "2.0.3"
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -66,85 +68,7 @@ class QSlider;
 class QComboBox;
 QT_END_NAMESPACE
 
-class MainUI;
-
-typedef struct
-{
-    cv::Mat input;
-    cv::Mat seg;
-    cv::Mat processed;
-    std::vector<double> features;
-    std::vector<double> rootlengthhist;
-    std::vector<std::vector<double>> roifeatures;
-    std::vector<std::vector<double>> roirootlengthhist;
-
-    cv::Mat rtdpoints; // To get length-diameter profile
-
-    int rotation = 0;
-
-    // UI option for type of root being processed
-    // 0 = Whole root
-    // 1 = Broken roots
-    int roottype = 1;
-
-    // UI option for threshold to be applied for segmentation
-    int threshold = 200;
-
-    // UI option for image color inversion
-    bool invertimage = false;
-
-    // UI options for line smoothing
-    bool enablesmooththresh = false;
-    double smooththresh = 2.0;
-
-    // UI options for filtering noisy components
-    bool keepLargest = true;
-    bool filterbknoise = false;
-    bool filterfgnoise = false;
-    double maxcompsizebk = 1.0;
-    double maxcompsizefg = 1.0;
-
-    // UI option for root pruning
-    bool enableRootPruning = false;
-    int rootPruningThreshold = 1;
-
-    // UI options for convert pixels to physical units
-    bool pixelconv = false;
-    double conversion = 1.0;
-    int pixelspermm = 0; // 0 for DPI, 1 for Pixels per mm
-
-    // UI options for diameter ranges
-    std::vector<double> dranges = { 2.0, 5.0 };
-    
-    // Setting to interactively change the image being shown
-    int displayOutputIndex = 0;
-
-    // UI options for displaying output options
-    bool showConvexHull = true; // For whole root only
-    bool showHoles = true;      // For whole roots only
-    bool showDistMap = false;
-    bool showMedialAxis = true;
-    int medialaxiswidth = 3;
-    bool showMedialAxisDiameter = true;
-    bool showContours = true;
-    int contourwidth = 1;
-
-
-    // Batch processing options
-    bool batchmode = false;
-    bool savesegmented = false;
-    bool saveprocessed = false;
-    QString segsuffix, prosuffix;
-    QString featurecsvfile = "features.csv";
-    QString metadatacsvfile = "metadata.csv";
-
-    // Needed reporting progress in interactive mode.
-    MainUI *ui;
-    bool abortprocess = false;
-
-    // Used for logging messages
-    QString imagename;
-} feature_config;
+#include "feature_config.h"
 
 class CheckEnabler : public QWidget
 {

@@ -1,3 +1,17 @@
+version 2.5.0
+-------------
+New features:
+* The source code to is ported to use cmake and support Windows
+  and Linux 64-bit builds.
+* Added a console application rv, to run root image analysis on Linux
+  servers.
+
+Fixes:
+* The source code is updated to C++17 standard.
+* The source code is updated to use Qt 6.9 and OpenCV 4.11.
+* Fixed root length calculation to be consistent and robust to image 
+  rotations.
+
 version 2.0.3
 -------------
 Source code updated to reflect transfer of copyright from Noble Research

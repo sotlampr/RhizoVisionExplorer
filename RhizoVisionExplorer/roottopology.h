@@ -1,12 +1,13 @@
 /*
+Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
 File: roottopology.h
 
 Authors:
-Anand Seethepalli (anand.seethepalli@yahoo.co.in)
-Larry York (larry.york@gmail.com)
+Anand Seethepalli (seethepallia@ornl.gov)
+Larry York (yorklm@ornl.gov)
 
 This file is part of RhizoVision Explorer.
 
@@ -38,7 +39,7 @@ cv::Mat drawtopology(cv::Mat segmented, cv::Mat skeleton, PointList branchpts, P
 cv::Mat drawtopology2(cv::Mat segmented, cv::Scalar_<int> ranges, cv::Mat _skeleton, PointList branchpts, PointList endpts, PointList overlappts);
 
 cv::Mat drawtopology_wholeroot(cv::Mat img, cv::Scalar_<int> ranges, std::vector<std::vector<int>> cc, std::vector<int> colorcodes, std::vector<std::vector<int>> colors);
-cv::Mat drawtopology_disconnectedroot(cv::Mat segmented, cv::Mat dist, cv::Scalar_<int> ranges, cv::Mat _skeleton, PointList branchpts, PointList endpts, PointList overlappts, int width);
+cv::Mat drawtopology_disconnectedroot(cv::Mat segmented, cv::Mat dist, cv::Scalar_<int> ranges, cv::Mat _skeleton, PointList branchpts, PointList endpts, PointList overlappts, PointList simplified, int width);
 
 cv::Mat drawmedialaxis(cv::Mat dist, cv::Mat skel, std::vector<double> rranges, int width);
 

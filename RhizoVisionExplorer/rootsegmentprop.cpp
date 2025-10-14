@@ -1,12 +1,13 @@
 /*
+Copyright (C) 2025, Oak Ridge National Laboratory
 Copyright (C) 2021, Anand Seethepalli and Larry York
 Copyright (C) 2020, Courtesy of Noble Research Institute, LLC
 
 File: rootsegmentprop.cpp
 
 Authors:
-Anand Seethepalli (anand.seethepalli@yahoo.co.in)
-Larry York (larry.york@gmail.com)
+Anand Seethepalli (seethepallia@ornl.gov)
+Larry York (yorklm@ornl.gov)
 
 This file is part of RhizoVision Explorer.
 
@@ -81,6 +82,41 @@ void getrootlength(Mat skeleton, ListofListsRef<Point> segments, PointList overl
     }
 }
 
+// New method
+void getrootlength_new(Mat skeleton, ListofListsRef<Point> segments, PointList overlap, PointList simplified, double& rootlen)
+{
+    rootlen = 0.0;
+    Point diff;
+    uchar* skel = skeleton.ptr<uchar>();
+    size_t segsize = segments.size();
+    size_t segmentsize = 0;
+    simplified.clear();
+    
+    // Compute the sum of distances of root segments using 
+    // euclidean distance metric.
+    for (int i = 0; i < segsize; i++)
+    {
+        simplified = doughlas_peucker(segments[i], 0.71, false); // We took the 0.71 as threshold to make sure we identify straight lines.
+        segmentsize = simplified.size() - 1;
+
+        for (int j = 0; j < segmentsize; j++)
+        {
+            diff = simplified[j] - simplified[j + 1];
+            rootlen += norm(diff);
+        }
+    }
+
+    for (auto& overlappt : overlap)
+    {
+        // To check if the overlappt is a diagonal or orthogonal
+        if (skel[overlappt.y * skeleton.cols + overlappt.x + 1] > 0)
+            rootlen++;               // Orthogonal
+        else
+            rootlen += CVUTIL_SQRT2; // Diagonal
+    }
+}
+
+
 //double getrootlength(Mat skeleton)
 //{
 //    double sum = 0.0;
@@ -108,7 +144,10 @@ void getrootlength(Mat skeleton, ListofListsRef<Point> segments, PointList overl
 
 void getrootradii(Mat skeleton, Mat segment, Mat dist, ListofListsRef<Point> segments, ListofListsRef<double> radii, double& maxradius, int& maxradrowidx)
 {
-    int i, j, x, y, xinc, yinc, currx, curry, nextx, nexty, nnextpt, ptcount;
+    int i = 0, j = 0, x = 0, y = 0;
+    int xinc = 0, yinc = 0, currx = 0, curry = 0;
+    int nextx = 0, nexty = 0, nnextpt = 0, ptcount = 0;
+
     size_t cisz;
 
     Mat dskeleton;

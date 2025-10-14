@@ -1,0 +1,40 @@
+package:
+  name: rhizovisionexplorer
+  version: "2.5.0"
+
+source:
+  path: .
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - make
+    - qt6-main >=6.9.1
+    - qt6-charts >=6.9.1
+    - opencv >=4.11
+    - cvutil
+  host:
+    - opencv >=4.11
+    - qt6-main >=6.9.1
+    - qt6-charts >=6.9.1
+    - libgl-devel # [linux]
+    - cvutil
+  run:
+    - opencv >=4.11
+    - qt6-main >=6.9.1
+    - qt6-charts >=6.9.1
+    - libstdcxx-ng
+    - cvutil
+
+about:
+  home: https://github.com/predictivephenomics/RhizoVisionExplorer
+  summary: "RhizoVisionExplorer is a tool for analyzing root images."
+  license: GPL-3.0
+  license_family: GPL
+  license_file: COPYING
+  maintainer: seethepallia@ornl.gov
+  
