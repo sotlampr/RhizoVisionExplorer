@@ -81,12 +81,12 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     endforeach()
 
     # Install cvutil libraries
-    foreach(cvutil_lib ${cvutil_LIBRARIES})
+    foreach(cvutil_lib cvutil::cvutil cvutil::PluginManager cvutil::RoiManager)
         install(FILES $<TARGET_FILE:${cvutil_lib}> CONFIGURATIONS Debug Release DESTINATION .)
     endforeach()
 
     # Install cvutil PDB files
-    foreach(cvutil_lib ${cvutil_LIBRARIES})
+    foreach(cvutil_lib cvutil::cvutil cvutil::PluginManager cvutil::RoiManager)
         get_target_property(pdb_path ${cvutil_lib} IMPORTED_PDB_LOCATION_DEBUG)
         if(NOT pdb_path)
             get_target_property(pdb_path ${cvutil_lib} IMPORTED_LOCATION_DEBUG)

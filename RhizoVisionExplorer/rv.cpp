@@ -207,7 +207,8 @@ feature_config parseCommandLine(int argc, char* argv[])
     bool ssuffix = false;
     bool fsuffix = false;
     double pixelFactor = 1.0;
-
+    double dpiFactor = 1.0;
+    
     for (int i = 1; i < argc; ++i)
     {
         std::string arg = argv[i];

@@ -179,7 +179,6 @@ target_link_libraries(RhizoVisionExplorer
         Qt6::Charts
         Qt6::Gui
         Qt6::OpenGL
-        # ${cvutil_LIBRARIES}
         cvutil::cvutil
         cvutil::PluginManager
         cvutil::RoiManager
@@ -188,7 +187,6 @@ target_link_libraries(RhizoVisionExplorer
 target_link_libraries(rv
     PRIVATE
         ${OpenCV_LIBS}
-        # ${cvutil_LIBRARIES}
         Qt6::Core
         Qt6::Widgets
         Qt6::Charts
