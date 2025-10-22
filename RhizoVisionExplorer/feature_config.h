@@ -38,13 +38,12 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <QtCore/QString>
 #else
 #include <string>
+typedef std::string QString;
 #endif
 
 #define RHIZOVISION_EXPLORER_VERSION "2.5.0 Beta"
 
 class MainUI;
-
-typedef std::string QString;
 
 typedef struct _feature_config
 {
