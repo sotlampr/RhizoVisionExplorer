@@ -34,11 +34,17 @@ If not, see <https://www.gnu.org/licenses/>.
 #include <opencv2/opencv.hpp>
 #include <vector>
 
+#ifdef BUILD_GUI
 #include <QtCore/QString>
+#else
+#include <string>
+#endif
 
 #define RHIZOVISION_EXPLORER_VERSION "2.5.0 Beta"
 
 class MainUI;
+
+typedef std::string QString;
 
 typedef struct _feature_config
 {
